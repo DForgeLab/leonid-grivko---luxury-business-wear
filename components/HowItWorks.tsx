@@ -16,7 +16,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onCTAClick }) => {
   return (
     <section className="py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-bold mb-24 stagger-child">
+        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-24 stagger-child">
           4 простых шага к идеальному деловому гардеробу
         </h2>
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
@@ -26,7 +26,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ onCTAClick }) => {
                 <div className="flex-shrink-0 w-16 h-16 rounded-full border-2 border-primary/50 text-primary flex items-center justify-center font-bold text-3xl font-serif mr-8">
                   {step.number}
                 </div>
-                <p className="text-lg sm:text-xl text-textSecondaryOnLight mt-4">{step.text}</p>
+                <p className="text-base sm:text-lg text-textSecondaryOnLight mt-4">{step.text}</p>
               </div>
             ))}
           </div>

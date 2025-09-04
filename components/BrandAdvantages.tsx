@@ -12,10 +12,10 @@ const BrandAdvantages: React.FC<BrandAdvantagesProps> = ({ onCTAClick }) => {
         <div className="flex flex-col lg:flex-row items-stretch gap-16 lg:gap-24">
             {/* Text Column */}
             <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-8 stagger-child font-serif">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 stagger-child font-serif">
                     Почему 92% клиенток возвращаются к LEONID GRIVKO
                 </h2>
-                <p className="text-xl sm:text-2xl text-textSecondaryOnDark mb-16 stagger-child">
+                <p className="text-lg sm:text-xl text-textSecondaryOnDark mb-16 stagger-child">
                     Мы создаем не просто одежду, а инструмент для вашего карьерного роста
                 </p>
                 <div className="stagger-child">

@@ -34,7 +34,7 @@ const FAQ: React.FC = () => {
     return (
         <section className="py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
             <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-                <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-bold mb-20 stagger-child">
+                <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-20 stagger-child">
                     Ответы на главные вопросы
                 </h2>
                 <div className="space-y-4">

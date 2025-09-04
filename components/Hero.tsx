@@ -15,10 +15,10 @@ const Hero: React.FC<HeroProps> = ({ onCTAClick }) => {
     >
       <div className="container mx-auto px-4 sm:px-6 text-center flex-grow flex flex-col justify-center">
         <div className="max-w-5xl mx-auto">
-            <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-6 leading-tight font-serif stagger-child" style={{textShadow: '0 2px 8px rgba(0,0,0,0.4)'}}>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight font-serif stagger-child" style={{textShadow: '0 2px 8px rgba(0,0,0,0.4)'}}>
               ДЕЛОВЫЕ КОСТЮМЫ, КОТОРЫЕ ПОДЧЕРКИВАЮТ ВАШ СТАТУС
             </h1>
-            <h2 className="text-xl sm:text-2xl font-sans font-normal text-textOnDark/80 max-w-3xl mx-auto mb-10 stagger-child" style={{textShadow: '0 1px 6px rgba(0,0,0,0.4)'}}>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-sans font-normal text-textOnDark/80 max-w-3xl mx-auto mb-10 stagger-child" style={{textShadow: '0 1px 6px rgba(0,0,0,0.4)'}}>
               Для женщин, ценящих качество и индивидуальность.
             </h2>
             <div className="stagger-child">

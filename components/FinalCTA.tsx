@@ -17,17 +17,17 @@ const FinalCTA: React.FC<FinalCTAProps> = ({ onCTAClick }) => {
   return (
     <section className="py-24 md:py-32 bg-background text-textOnDark fade-in-section">
       <div className="container mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 stagger-child">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 stagger-child">
           Ваша карьера заслуживает идеального гардероба
         </h2>
-        <p className="max-w-3xl mx-auto mb-16 text-lg sm:text-xl text-textSecondaryOnDark stagger-child">
+        <p className="max-w-3xl mx-auto mb-16 text-base sm:text-lg text-textSecondaryOnDark stagger-child">
           Не теряйте доверие клиентов из-за неправильной одежды. LEONID GRIVKO — первый в России luxury-бренд готовой женской деловой одежды с кутюрным подходом.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto text-left mb-16">
           {bullets.map((text, index) => (
             <div key={index} className="flex items-start stagger-child">
               <CheckIcon className="w-7 h-7 text-primary mr-5 mt-1 flex-shrink-0" />
-              <p className="text-lg">{text}</p>
+              <p className="text-base sm:text-lg">{text}</p>
             </div>
           ))}
         </div>

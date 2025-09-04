@@ -7,10 +7,10 @@ const ProblemStat: React.FC = () => {
         <div className="relative flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
           <div className="lg:w-1/2 relative z-10 lg:pr-12">
             <div className="bg-backgroundLight text-textOnLight p-8 md:p-12 rounded-2xl">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight stagger-child">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight stagger-child">
                 8 из 10 женщин теряют доверие клиентов из-за неправильной одежды
               </h2>
-              <p className="text-lg sm:text-xl text-textSecondaryOnLight leading-relaxed stagger-child">
+              <p className="text-base sm:text-lg text-textSecondaryOnLight leading-relaxed stagger-child">
                 Исследование Moscow Business School показало: 72% переговоров проигрываются не из-за компетентности, а из-за непрофессионального вида. Ваша одежда работает за вас, даже когда вы молчите.
               </p>
             </div>

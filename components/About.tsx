@@ -21,17 +21,17 @@ const About: React.FC<AboutProps> = ({ onCTAClick }) => {
           
           {/* Left Content Card */}
           <div className="lg:w-1/2 w-full bg-backgroundLight text-textOnLight p-8 md:p-12 rounded-2xl flex flex-col justify-center stagger-child">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight stagger-child font-serif">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight stagger-child font-serif">
               LEONID GRIVKO: где рождается русский luxury
             </h2>
-            <p className="text-xl text-textSecondaryOnLight mb-8 stagger-child font-sans">
+            <p className="text-lg text-textSecondaryOnLight mb-8 stagger-child font-sans">
               Мы не просто продаем одежду — создаем инструменты для вашего карьерного роста.
             </p>
             <div className="space-y-5 mb-10">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start stagger-child">
                   <CheckIcon className="w-7 h-7 text-primary mr-5 mt-1 flex-shrink-0" />
-                  <p className="text-lg text-textSecondaryOnLight">{feature}</p>
+                  <p className="text-base sm:text-lg text-textSecondaryOnLight">{feature}</p>
                 </div>
               ))}
             </div>

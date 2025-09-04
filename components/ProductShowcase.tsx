@@ -16,10 +16,10 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onCTAClick }) => {
   return (
     <section className="py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
       <div className="container mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 stagger-child">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 stagger-child">
           CLASSIC COLLECTION
         </h2>
-        <p className="max-w-3xl mx-auto text-lg sm:text-xl text-textSecondaryOnLight mb-20 stagger-child">
+        <p className="max-w-3xl mx-auto text-base sm:text-lg text-textSecondaryOnLight mb-20 stagger-child">
           Базовые костюмы для ежедневного использования. Надевайте их с уверенностью — они сядут по фигуре идеально.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-20">
@@ -32,8 +32,8 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onCTAClick }) => {
                   className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105" 
                 />
               </div>
-              <h3 className="font-sans text-xl font-medium text-textOnLight">{product.name}</h3>
-              <p className="font-sans text-lg text-textSecondaryOnLight">{product.price}</p>
+              <h3 className="font-sans text-lg font-medium text-textOnLight">{product.name}</h3>
+              <p className="font-sans text-base text-textSecondaryOnLight">{product.price}</p>
             </div>
           ))}
         </div>
