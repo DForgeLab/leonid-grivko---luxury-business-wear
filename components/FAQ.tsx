@@ -32,12 +32,12 @@ const FAQ: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-24 md:py-32 bg-white fade-in-section">
+        <section className="py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
             <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-                <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-bold mb-16 stagger-child">
+                <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-bold mb-20 stagger-child">
                     Ответы на главные вопросы
                 </h2>
-                <div className="space-y-6">
+                <div className="space-y-4">
                     {faqData.map((item, index) => (
                         <div className="stagger-child" key={index}>
                             <AccordionItem

@@ -50,11 +50,11 @@ const App: React.FC = () => {
         
         gsap.from(childrenToStagger, {
           opacity: 0,
-          y: 30,
-          scale: 0.98,
-          duration: 1,
-          stagger: 0.1,
-          ease: 'power4.out',
+          y: 50,
+          scale: 1,
+          duration: 1.2,
+          stagger: 0.15,
+          ease: 'power3.out',
           scrollTrigger: {
             trigger: el,
             start: 'top 85%',
@@ -68,7 +68,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div ref={mainRef} className="bg-background text-text font-sans overflow-x-hidden">
+    <div ref={mainRef} className="bg-background text-textOnDark font-sans overflow-x-hidden">
       <QuizModal isOpen={isQuizOpen} onClose={closeQuiz} />
       <Header onCTAClick={openQuiz} />
       <main>

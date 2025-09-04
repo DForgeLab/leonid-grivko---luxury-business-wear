@@ -39,11 +39,18 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
   const totalQuestions = questions.length;
   
   const handleReset = () => {
-    setStep(0);
-    setAnswers({});
-    setSubmitted(false);
-    setSelectedOption(null);
-    onClose();
+    // Add a delay to allow the closing animation
+    const modal = document.getElementById('quiz-modal-content');
+    if (modal) {
+        modal.classList.remove('animate-fade-in-up');
+    }
+    setTimeout(() => {
+        setStep(0);
+        setAnswers({});
+        setSubmitted(false);
+        setSelectedOption(null);
+        onClose();
+    }, 300)
   };
   
   const handleAnswerSelect = (questionId: string, answer: string) => {
@@ -76,39 +83,39 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
   const progress = Math.round(((step) / (totalQuestions)) * 100);
 
   return (
-    <div className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-2 sm:p-4 animate-fade-in-up" onClick={handleReset}>
-      <div className="bg-backgroundLight rounded-lg shadow-2xl w-full max-w-2xl relative p-6 sm:p-8 md:p-10 transform transition-all" onClick={e => e.stopPropagation()}>
-        <button onClick={handleReset} aria-label="Закрыть" className="absolute top-4 right-4 text-gray-400 hover:text-text z-10 p-2">
-          <XIcon className="w-6 h-6" />
+    <div className="fixed inset-0 bg-background/80 backdrop-blur-md z-[100] flex items-center justify-center p-2 sm:p-4 animate-fade-in" onClick={handleReset}>
+      <div id="quiz-modal-content" className="bg-backgroundLight text-textOnLight rounded-2xl shadow-2xl w-full max-w-2xl relative p-6 sm:p-8 md:p-12 transform transition-all animate-fade-in-up" onClick={e => e.stopPropagation()}>
+        <button onClick={handleReset} aria-label="Закрыть" className="absolute top-5 right-5 text-textSecondaryOnLight hover:text-primary z-10 p-2 transition-colors">
+          <XIcon className="w-7 h-7" />
         </button>
 
         {submitted ? (
           <div className="text-center py-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4 font-serif">Спасибо!</h2>
-            <p className="text-lg sm:text-xl text-textSecondary mb-8">Ваша заявка принята. Наш стилист скоро свяжется с вами для обсуждения персональной подборки.</p>
+            <p className="text-lg sm:text-xl text-textSecondaryOnLight mb-8">Ваша заявка принята. Наш стилист скоро свяжется с вами для обсуждения персональной подборки.</p>
             <Button onClick={handleReset}>Закрыть</Button>
           </div>
         ) : (
           <div>
-            <div className="mb-8">
+            <div className="mb-10">
               <div className="flex justify-between items-center mb-2">
-                 <p className="text-sm font-semibold text-primary tracking-wider">ШАГ {step + 1} ИЗ {totalQuestions + 1}</p>
+                 <p className="text-sm font-semibold text-primary tracking-wider uppercase">Шаг {step + 1} из {totalQuestions + 1}</p>
                  <p className="text-sm font-bold text-primary">{step === totalQuestions ? 100 : progress}%</p>
               </div>
-              <div className="w-full bg-primary/10 rounded-full h-2">
-                <div className="bg-primary h-2 rounded-full transition-all duration-300" style={{width: `${step === totalQuestions ? 100 : progress}%`}}></div>
+              <div className="w-full bg-black/10 rounded-full h-2">
+                <div className="bg-primary h-2 rounded-full transition-all duration-500" style={{width: `${step === totalQuestions ? 100 : progress}%`}}></div>
               </div>
             </div>
 
             {step < totalQuestions && (
-              <div className="animate-fade-in-up">
+              <div className="animate-fade-in">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 font-serif">{questions[step].question}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {questions[step].options.map(option => (
                     <button 
                       key={option} 
                       onClick={() => handleAnswerSelect(questions[step].id, option)}
-                      className={`w-full text-left p-4 border-2 rounded-lg hover:bg-primary/5 hover:border-primary focus:border-primary focus:outline-none transition-all duration-200 font-semibold text-lg ${selectedOption === option ? 'bg-primary text-white border-primary' : 'border-primary/20'}`}
+                      className={`w-full text-left p-5 border rounded-lg focus:outline-none transition-all duration-200 font-semibold text-lg ${selectedOption === option ? 'bg-primary text-white border-primary' : 'border-black/20 bg-surface hover:border-primary'}`}
                     >
                       {option}
                     </button>
@@ -118,31 +125,27 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
             )}
 
             {step === totalQuestions && (
-              <div className="animate-fade-in-up">
+              <div className="animate-fade-in">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 font-serif">Получите вашу персональную подборку</h2>
-                <p className="text-center text-textSecondary mb-8 text-lg">Оставьте ваши контактные данные, и наш стилист свяжется с вами.</p>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <p className="text-center text-textSecondaryOnLight mb-8 text-lg">Оставьте ваши контактные данные, и наш стилист свяжется с вами.</p>
+                <form onSubmit={handleSubmit} className="space-y-5">
                    <div>
-                       <label htmlFor="name" className="block text-sm font-medium text-textSecondary mb-1">Имя</label>
-                       <input type="text" name="name" id="name" required className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary text-lg bg-white" placeholder="Анастасия" />
+                       <label htmlFor="name" className="block text-sm font-medium text-textSecondaryOnLight mb-1">Ваше имя</label>
+                       <input type="text" name="name" id="name" required className="w-full px-4 py-3 border border-black/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-lg bg-surface placeholder:text-textSecondaryOnLight/50" placeholder="Анастасия" />
                    </div>
                    <div>
-                       <label htmlFor="phone" className="block text-sm font-medium text-textSecondary mb-1">Телефон</label>
-                       <input type="tel" name="phone" id="phone" required className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary text-lg bg-white" placeholder="+7 (999) 123-45-67" />
+                       <label htmlFor="phone" className="block text-sm font-medium text-textSecondaryOnLight mb-1">Телефон</label>
+                       <input type="tel" name="phone" id="phone" required className="w-full px-4 py-3 border border-black/20 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary text-lg bg-surface placeholder:text-textSecondaryOnLight/50" placeholder="+7 (999) 123-45-67" />
                    </div>
-                   <div>
-                       <label htmlFor="email" className="block text-sm font-medium text-textSecondary mb-1">Email (необязательно)</label>
-                       <input type="email" name="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary text-lg bg-white" placeholder="example@mail.com" />
-                   </div>
-                    <Button type="submit" size="lg" className="w-full mt-4 !py-4">Получить подборку</Button>
+                    <Button type="submit" size="lg" className="w-full !mt-6 !py-4" variant="primary">Получить подборку</Button>
                 </form>
               </div>
             )}
             
-            <div className="mt-10 pt-6 border-t border-black/10 flex justify-between items-center h-6">
+            <div className="mt-12 pt-6 border-t border-black/10 flex justify-between items-center h-8">
               {step > 0 && step <= totalQuestions && (
-                <button onClick={handleBack} className="text-base font-semibold text-gray-600 hover:text-primary transition-colors flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                <button onClick={handleBack} className="text-base font-semibold text-textSecondaryOnLight hover:text-primary transition-colors flex items-center group">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
                     Назад
                 </button>
               )}

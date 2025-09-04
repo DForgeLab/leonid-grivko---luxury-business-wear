@@ -14,20 +14,20 @@ const Guarantees: React.FC<GuaranteesProps> = ({ onCTAClick }) => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-white fade-in-section">
+    <section className="py-24 md:py-40 bg-background text-textOnDark fade-in-section">
       <div className="container mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 stagger-child">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 stagger-child">
           3 гарантии, которые делают покупку безрисковой
         </h2>
-        <p className="max-w-3xl mx-auto text-lg sm:text-xl text-textSecondary mb-16 stagger-child">
+        <p className="max-w-3xl mx-auto text-lg sm:text-xl text-textSecondaryOnDark mb-20 stagger-child">
           Мы настолько уверены в качестве, что даем гарантии, которых нет у конкурентов
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-20">
           {guarantees.map((guarantee, index) => (
-            <div key={index} className="border border-primary/10 p-10 sm:p-12 rounded-lg text-center bg-backgroundLight shadow-lg stagger-child">
-              <h3 className="text-2xl sm:text-3xl font-bold text-accent mb-2 font-serif tracking-wider">0{index + 1}</h3>
-              <p className="text-2xl sm:text-3xl font-semibold mb-2 font-serif text-primary">{guarantee.title}</p>
-              <p className="text-textSecondary text-lg">{guarantee.description}</p>
+            <div key={index} className="border border-white/10 bg-black/20 p-10 sm:p-12 rounded-2xl text-center stagger-child">
+              <h3 className="text-4xl font-bold text-primary mb-4 font-serif tracking-wider">0{index + 1}</h3>
+              <p className="text-2xl sm:text-3xl font-semibold mb-3 font-serif text-textOnDark">{guarantee.title}</p>
+              <p className="text-textSecondaryOnDark text-lg">{guarantee.description}</p>
             </div>
           ))}
         </div>

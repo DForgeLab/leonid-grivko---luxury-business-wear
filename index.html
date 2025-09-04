@@ -13,25 +13,32 @@
         theme: {
           extend: {
             colors: {
-              primary: '#540728',
-              background: '#F9EEE5',
-              backgroundLight: '#FFFBF7',
-              text: '#1A1A1A',
-              textSecondary: '#4d4d4d',
-              accent: '#C0B283',
+              primary: '#6D2C3B', // Deep Burgundy
+              background: '#1F1D1D', // Dark Charcoal
+              backgroundLight: '#D3C5B5', // Warm Beige
+              surface: '#F5F0EB', // Off-white for inputs
+              textOnDark: '#F5F0EB', // Off-white text
+              textOnLight: '#1F1D1D', // Dark Charcoal text
+              textSecondaryOnDark: '#A9A9A9', // Muted Gray on dark
+              textSecondaryOnLight: '#5c5a5a', // Muted dark on light
             },
             fontFamily: {
               'sans': ['Jost', 'sans-serif'],
               'serif': ['Cormorant Garamond', 'serif'],
             },
             animation: {
-              'fade-in-up': 'fade-in-up 1s ease-out forwards',
+              'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+              'fade-in': 'fade-in 0.5s ease-out forwards',
             },
             keyframes: {
               'fade-in-up': {
-                '0%': { opacity: '0', transform: 'translateY(30px) scale(0.98)' },
-                '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               },
+              'fade-in': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
             }
           },
         },
@@ -39,30 +46,30 @@
     </script>
     <style>
       body {
-        background-color: #F9EEE5;
-        color: #1A1A1A;
+        background-color: #1F1D1D;
+        color: #F5F0EB;
         font-family: 'Jost', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
       h1, h2, h3, h4, h5, h6 {
         font-family: 'Cormorant Garamond', serif;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.01em;
       }
       ::selection {
-        background-color: #540728;
-        color: #F9EEE5;
+        background-color: #6D2C3B;
+        color: #F5F0EB;
       }
       ::-webkit-scrollbar {
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #F9EEE5;
+        background: #1F1D1D;
       }
       ::-webkit-scrollbar-thumb {
-        background-color: #C0B283;
+        background-color: #D3C5B5;
         border-radius: 10px;
-        border: 2px solid #F9EEE5;
+        border: 2px solid #1F1D1D;
       }
     </style>
   <script type="importmap">
