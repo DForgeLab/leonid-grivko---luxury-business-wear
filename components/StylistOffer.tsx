@@ -1,32 +1,38 @@
 import React from 'react';
 import Button from './ui/Button';
 
-const StylistOffer: React.FC = () => {
+type StylistOfferProps = {
+    onCTAClick: () => void;
+};
+
+const StylistOffer: React.FC<StylistOfferProps> = ({ onCTAClick }) => {
     return (
-        <section className="py-16 md:py-24 bg-background fade-in-section">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col lg:flex-row items-center gap-12">
+        <section className="py-24 md:py-28 bg-background fade-in-section">
+            <div className="container mx-auto px-4 sm:px-6">
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                     <div className="lg:w-1/2">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                            Бесплатная консультация стилиста при заказе от 1 образа
+                        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight stagger-child">
+                            Бесплатная консультация стилиста
                         </h2>
-                        <p className="text-lg font-semibold text-gray-800 mb-6">
+                        <p className="text-xl sm:text-2xl font-semibold text-textSecondary mb-6 stagger-child">
                             Получите профессиональные советы от эксперта, который работает с топ-менеджерами
                         </p>
-                        <p className="text-gray-700 mb-6 leading-relaxed">
+                        <p className="text-textSecondary text-lg mb-8 leading-relaxed stagger-child">
                             Наш стилист проведет 45-минутную консультацию, где:
                         </p>
-                        <ul className="list-disc list-inside space-y-2 text-gray-700 mb-8">
-                            <li>Проанализирует ваш цветотип и тип фигуры</li>
-                            <li>Подберет базовые вещи для вашего гардероба</li>
-                            <li>Научит комбинировать образы для разных типов встреч</li>
-                            <li>Даст рекомендации по уходу за одеждой</li>
+                        <ul className="list-disc list-inside space-y-3 text-textSecondary text-lg mb-10 pl-2">
+                            <li className="stagger-child">Проанализирует ваш цветотип и тип фигуры</li>
+                            <li className="stagger-child">Подберет базовые вещи для вашего гардероба</li>
+                            <li className="stagger-child">Научит комбинировать образы для разных типов встреч</li>
+                            <li className="stagger-child">Даст рекомендации по уходу за одеждой</li>
                         </ul>
-                        <Button size="lg">Забронировать консультацию</Button>
+                        <div className="stagger-child">
+                            <Button size="lg" onClick={onCTAClick}>Забронировать консультацию</Button>
+                        </div>
                     </div>
-                    <div className="lg:w-1/2">
+                    <div className="lg:w-1/2 stagger-child">
                         <img 
-                            src="https://optim.tildacdn.com/tild3730-3433-4531-a435-616230613866/-/format/webp/99.png" 
+                            src="https://static.tildacdn.com/tild3365-3866-4064-b263-363563343539/1_2_.png" 
                             alt="Стилист консультирует клиента" 
                             className="rounded-lg shadow-2xl w-full h-auto object-cover" 
                         />

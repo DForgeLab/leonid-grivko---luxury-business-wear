@@ -45,12 +45,17 @@ const App: React.FC = () => {
     const ctx = gsap.context(() => {
       const sections = gsap.utils.toArray('.fade-in-section');
       sections.forEach((section) => {
-        gsap.from(section as Element, {
+        const el = section as HTMLElement;
+        const childrenToStagger = gsap.utils.toArray('.stagger-child', el);
+        
+        gsap.from(childrenToStagger, {
           opacity: 0,
           y: 50,
-          duration: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out',
           scrollTrigger: {
-            trigger: section as Element,
+            trigger: el,
             start: 'top 85%',
             toggleActions: 'play none none none',
           },
@@ -69,17 +74,17 @@ const App: React.FC = () => {
         <Hero onCTAClick={openQuiz} />
         <ProblemStat />
         <QuizCTA onCTAClick={openQuiz} />
-        <HowItWorks />
-        <BrandAdvantages />
-        <ProductShowcase />
-        <TestDrive />
-        <Testimonials />
-        <About />
+        <HowItWorks onCTAClick={openQuiz}/>
+        <BrandAdvantages onCTAClick={openQuiz}/>
+        <ProductShowcase onCTAClick={openQuiz}/>
+        <TestDrive onCTAClick={openQuiz}/>
+        <Testimonials onCTAClick={openQuiz}/>
+        <About onCTAClick={openQuiz}/>
         <FAQ />
-        <UrgentOffer />
+        <UrgentOffer onCTAClick={openQuiz}/>
         <TrustBadges />
-        <StylistOffer />
-        <Guarantees />
+        <StylistOffer onCTAClick={openQuiz}/>
+        <Guarantees onCTAClick={openQuiz}/>
         <FinalCTA onCTAClick={openQuiz} />
       </main>
       <Footer />

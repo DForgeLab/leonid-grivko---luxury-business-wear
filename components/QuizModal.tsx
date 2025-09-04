@@ -70,39 +70,39 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
   const progress = Math.round(((step) / (totalQuestions + 1)) * 100);
 
   return (
-    <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 animate-fade-in-up" onClick={handleReset}>
-      <div className="bg-background rounded-lg shadow-2xl w-full max-w-2xl relative p-6 md:p-8 transform transition-all" onClick={e => e.stopPropagation()}>
-        <button onClick={handleReset} className="absolute top-4 right-4 text-gray-500 hover:text-text z-10">
+    <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-2 sm:p-4 animate-fade-in-up" onClick={handleReset}>
+      <div className="bg-background rounded-lg shadow-2xl w-full max-w-2xl relative p-6 sm:p-8 md:p-10 transform transition-all" onClick={e => e.stopPropagation()}>
+        <button onClick={handleReset} className="absolute top-4 right-4 text-gray-400 hover:text-text z-10 p-2">
           <XIcon className="w-6 h-6" />
         </button>
 
         {submitted ? (
           <div className="text-center py-12">
-            <h2 className="text-3xl font-bold text-primary mb-4">Спасибо!</h2>
-            <p className="text-lg mb-6">Ваша заявка принята. Наш стилист скоро свяжется с вами для обсуждения персональной подборки.</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4 font-serif">Спасибо!</h2>
+            <p className="text-lg sm:text-xl text-textSecondary mb-8">Ваша заявка принята. Наш стилист скоро свяжется с вами для обсуждения персональной подборки.</p>
             <Button onClick={handleReset}>Закрыть</Button>
           </div>
         ) : (
           <div>
-            <div className="mb-6">
+            <div className="mb-8">
               <div className="flex justify-between items-center mb-2">
-                 <p className="text-sm font-semibold text-primary">Шаг {step + 1} из {totalQuestions + 1}</p>
-                 <p className="text-sm font-semibold text-primary">{progress}%</p>
+                 <p className="text-sm font-semibold text-primary tracking-wider">ШАГ {step + 1} ИЗ {totalQuestions + 1}</p>
+                 <p className="text-sm font-bold text-primary">{progress}%</p>
               </div>
-              <div className="w-full bg-gray-300 rounded-full h-2">
-                <div className="bg-primary h-2 rounded-full transition-all duration-300" style={{width: `${progress}%`}}></div>
+              <div className="w-full bg-primary/10 rounded-full h-1.5">
+                <div className="bg-primary h-1.5 rounded-full transition-all duration-300" style={{width: `${progress}%`}}></div>
               </div>
             </div>
 
             {step < totalQuestions && (
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">{questions[step].question}</h2>
+              <div className="animate-fade-in-up">
+                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 font-serif">{questions[step].question}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {questions[step].options.map(option => (
                     <button 
                       key={option} 
                       onClick={() => handleAnswerSelect(questions[step].id, option)}
-                      className="w-full text-left p-4 border-2 border-primary/20 rounded-lg hover:bg-primary/10 hover:border-primary transition-all duration-300 font-semibold"
+                      className="w-full text-left p-4 border-2 border-primary/20 rounded-lg hover:bg-primary/5 hover:border-primary focus:border-primary focus:outline-none transition-all duration-300 font-semibold text-lg"
                     >
                       {option}
                     </button>
@@ -112,30 +112,30 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
             )}
 
             {step === totalQuestions && (
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Получите вашу персональную подборку</h2>
-                <p className="text-center text-gray-600 mb-8">Оставьте ваши контактные данные, и наш стилист свяжется с вами.</p>
+              <div className="animate-fade-in-up">
+                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 font-serif">Получите вашу персональную подборку</h2>
+                <p className="text-center text-textSecondary mb-8 text-lg">Оставьте ваши контактные данные, и наш стилист свяжется с вами.</p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                    <div>
-                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Имя</label>
-                       <input type="text" name="name" id="name" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
+                       <label htmlFor="name" className="block text-sm font-medium text-textSecondary mb-1">Имя</label>
+                       <input type="text" name="name" id="name" required className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary text-lg" />
                    </div>
                    <div>
-                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Телефон</label>
-                       <input type="tel" name="phone" id="phone" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
+                       <label htmlFor="phone" className="block text-sm font-medium text-textSecondary mb-1">Телефон</label>
+                       <input type="tel" name="phone" id="phone" required className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary text-lg" />
                    </div>
                    <div>
-                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email (необязательно)</label>
-                       <input type="email" name="email" id="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary" />
+                       <label htmlFor="email" className="block text-sm font-medium text-textSecondary mb-1">Email (необязательно)</label>
+                       <input type="email" name="email" id="email" className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-primary focus:border-primary text-lg" />
                    </div>
-                    <Button type="submit" size="lg" className="w-full">Получить подборку</Button>
+                    <Button type="submit" size="lg" className="w-full mt-4 !py-5">Получить подборку</Button>
                 </form>
               </div>
             )}
             
-            <div className="mt-8 pt-4 border-t border-gray-200 flex justify-between items-center">
-              {step > 0 ? (
-                <button onClick={handleBack} className="text-sm font-semibold text-gray-600 hover:text-primary">&larr; Назад</button>
+            <div className="mt-10 pt-6 border-t border-black/10 flex justify-between items-center">
+              {step > 0 && step <= totalQuestions ? (
+                <button onClick={handleBack} className="text-base font-semibold text-gray-600 hover:text-primary transition-colors">&larr; Назад</button>
               ) : <div></div>}
             </div>
           </div>

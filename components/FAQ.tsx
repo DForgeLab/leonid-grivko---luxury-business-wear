@@ -32,20 +32,21 @@ const FAQ: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-16 md:py-24 bg-white fade-in-section">
-            <div className="container mx-auto px-6 max-w-4xl">
-                <h2 className="text-center text-3xl md:text-5xl font-bold mb-12">
-                    Ответы на главные вопросы о LEONID GRIVKO
+        <section className="py-24 md:py-32 bg-white fade-in-section">
+            <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+                <h2 className="text-center text-4xl sm:text-5xl md:text-6xl font-bold mb-16 stagger-child">
+                    Ответы на главные вопросы
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                     {faqData.map((item, index) => (
-                        <AccordionItem
-                            key={index}
-                            question={item.question}
-                            answer={item.answer}
-                            isOpen={openIndex === index}
-                            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                        />
+                        <div className="stagger-child" key={index}>
+                            <AccordionItem
+                                question={item.question}
+                                answer={item.answer}
+                                isOpen={openIndex === index}
+                                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                            />
+                        </div>
                     ))}
                 </div>
             </div>
