@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leonid Grivko - Запуск сайта</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #540728, #8B1538);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .instructions {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .button {
+            display: inline-block;
+            background: #F9EEE5;
+            color: #540728;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .success {
+            background: rgba(40, 167, 69, 0.2);
+            border: 2px solid #28a745;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎩 Leonid Grivko</h1>
+        <h2>Luxury Business Wear</h2>
+
+        <div class="instructions">
+            <p><strong>Добро пожаловать!</strong></p>
+            <p>Ваш сайт готов к запуску. Выберите один из способов:</p>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Важно:</strong> Для корректной работы сайта используйте современный браузер
+            (Chrome, Firefox, Edge, Safari)
+        </div>
+
+        <a href="dist/index.html" class="button">
+            🚀 Запустить сайт
+        </a>
+
+        <div class="success">
+            <strong>✅ Готово!</strong><br>
+            Сайт полностью настроен и готов к использованию.<br>
+            Просто нажмите кнопку выше для запуска.
+        </div>
+
+        <div style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+            <p>Если у вас возникли проблемы с запуском,</p>
+            <p>обратитесь к разработчику</p>
+        </div>
+    </div>
+
+    <script>
+        // Проверяем, поддерживает ли браузер современные функции
+        if (!window.fetch || !window.Promise) {
+            document.querySelector('.warning').innerHTML =
+                '<strong>❌ Ошибка:</strong> Ваш браузер устарел. Пожалуйста, обновите браузер до последней версии.';
+            document.querySelector('.warning').style.background = 'rgba(220, 53, 69, 0.2)';
+            document.querySelector('.warning').style.borderColor = '#dc3545';
+        }
+    </script>
+</body>
+</html>
