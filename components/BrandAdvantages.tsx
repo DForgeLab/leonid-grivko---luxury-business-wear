@@ -19,7 +19,7 @@ const BrandAdvantages: React.FC<BrandAdvantagesProps> = ({ onCTAClick }) => {
                     Мы создаем не просто одежду, а инструмент для вашего карьерного роста
                 </p>
                 <div className="stagger-child">
-                    <Button size="lg" onClick={onCTAClick}>Посмотреть как работает система "3 в 1"</Button>
+                    <Button size="lg" onClick={onCTAClick}>Посмотреть как работает система <span style={{textWrap: 'nowrap'}}>"3 в 1"</span></Button>
                 </div>
             </div>
             
