@@ -15,6 +15,7 @@
             colors: {
               primary: '#540728',
               background: '#F9EEE5',
+              backgroundLight: '#FFFBF7',
               text: '#1A1A1A',
               textSecondary: '#4d4d4d',
               accent: '#C0B283',
@@ -24,12 +25,12 @@
               'serif': ['Cormorant Garamond', 'serif'],
             },
             animation: {
-              'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+              'fade-in-up': 'fade-in-up 1s ease-out forwards',
             },
             keyframes: {
               'fade-in-up': {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
+                '0%': { opacity: '0', transform: 'translateY(30px) scale(0.98)' },
+                '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
               },
             }
           },
@@ -51,6 +52,17 @@
       ::selection {
         background-color: #540728;
         color: #F9EEE5;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F9EEE5;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #C0B283;
+        border-radius: 10px;
+        border: 2px solid #F9EEE5;
       }
     </style>
   <script type="importmap">

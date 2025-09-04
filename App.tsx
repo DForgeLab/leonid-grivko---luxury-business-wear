@@ -50,10 +50,11 @@ const App: React.FC = () => {
         
         gsap.from(childrenToStagger, {
           opacity: 0,
-          y: 50,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
+          y: 30,
+          scale: 0.98,
+          duration: 1,
+          stagger: 0.1,
+          ease: 'power4.out',
           scrollTrigger: {
             trigger: el,
             start: 'top 85%',

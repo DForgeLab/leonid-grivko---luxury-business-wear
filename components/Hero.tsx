@@ -8,20 +8,20 @@ type HeroProps = {
 
 const Hero: React.FC<HeroProps> = ({ onCTAClick }) => {
   const bullets = [
-    "Индивидуальный подход: 6 образов, созданных под ваш тип фигуры и график",
-    "Экономия 15 часов в месяц: больше не ищете одежду, которая сидит идеально",
-    "Гарантия качества: ткани из Европы, пошив в Москве за 14 дней",
-    "Персональный стилист в подарок: советы по комбинированию образов"
+    "Индивидуальный подход",
+    "Экономия 15 часов в месяц",
+    "Гарантия качества",
+    "Персональный стилист"
   ];
 
   return (
     <section 
-      className="min-h-screen bg-cover bg-center flex items-center pt-24 sm:pt-28 pb-12 text-white" 
+      className="min-h-screen bg-cover bg-center flex flex-col justify-center pt-24 sm:pt-28 pb-12 text-white" 
       style={{
-        backgroundImage: "linear-gradient(to bottom, rgba(26,26,26,0.6) 0%, transparent 25%), linear-gradient(to top, rgba(26,26,26,0.5) 0%, transparent 30%), url('https://optim.tildacdn.com/tild3334-3564-4264-a134-646665666239/-/format/webp/0-min_3.png')"
+        backgroundImage: "linear-gradient(to bottom, rgba(26,26,26,0.6) 0%, transparent 40%), linear-gradient(to top, rgba(26,26,26,0.5) 0%, transparent 30%), url('https://optim.tildacdn.com/tild3334-3564-4264-a134-646665666239/-/format/webp/0-min_3.png')"
       }}
     >
-      <div className="container mx-auto px-4 sm:px-6 text-center">
+      <div className="container mx-auto px-4 sm:px-6 text-center flex-grow flex flex-col justify-center">
         <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 leading-tight stagger-child" style={{textShadow: '0 2px 10px rgba(0,0,0,0.5)'}}>
               Ваша уверенность начинается с идеального силуэта.
@@ -38,15 +38,17 @@ const Hero: React.FC<HeroProps> = ({ onCTAClick }) => {
                 </Button>
             </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {bullets.map((text, index) => (
-            <div key={index} className="flex items-start text-left stagger-child">
-              <CheckIcon className="w-6 h-6 text-accent mr-4 mt-1 flex-shrink-0" />
-              <p className="text-sm sm:text-base" style={{textShadow: '0 1px 4px rgba(0,0,0,0.5)'}}>{text}</p>
-            </div>
-          ))}
-        </div>
       </div>
+       <div className="container mx-auto px-4 sm:px-6 mt-auto">
+         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto border-t border-white/20 pt-8">
+            {bullets.map((text, index) => (
+              <div key={index} className="flex items-center justify-center text-center stagger-child">
+                <CheckIcon className="w-5 h-5 text-accent mr-3 flex-shrink-0" />
+                <p className="text-sm sm:text-base" style={{textShadow: '0 1px 4px rgba(0,0,0,0.5)'}}>{text}</p>
+              </div>
+            ))}
+          </div>
+       </div>
     </section>
   );
 };

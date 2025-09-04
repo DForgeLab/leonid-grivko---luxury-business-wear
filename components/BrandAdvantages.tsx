@@ -25,7 +25,7 @@ const BrandAdvantages: React.FC<BrandAdvantagesProps> = ({ onCTAClick }) => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto text-left mb-16">
           {advantages.map((text, index) => (
-            <div key={index} className="flex items-start p-8 sm:p-10 bg-white rounded-lg shadow-xl border border-primary/10 stagger-child">
+            <div key={index} className="flex items-start p-8 sm:p-10 bg-backgroundLight rounded-lg shadow-lg border border-transparent hover:border-accent transition-colors duration-300 stagger-child">
               <CheckIcon className="w-8 h-8 text-primary mr-5 mt-1 flex-shrink-0" />
               <p className="text-lg text-textSecondary">{text}</p>
             </div>

@@ -17,10 +17,10 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   type = 'button' 
 }) => {
-  const baseStyles = 'font-bold rounded-md transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-offset-background relative overflow-hidden group tracking-wide';
+  const baseStyles = 'font-bold rounded-md transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-offset-background relative overflow-hidden group tracking-wide transform hover:-translate-y-px';
   
   const variantStyles = {
-    primary: 'bg-primary text-white hover:bg-primary/90 focus:ring-primary/50',
+    primary: 'bg-primary text-white hover:brightness-110 focus:ring-primary/50',
     secondary: 'bg-background text-primary hover:bg-background/90 focus:ring-primary/30',
     outline: 'bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary/50',
     'outline-white': 'bg-transparent border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm focus:ring-white/50',
@@ -31,9 +31,6 @@ const Button: React.FC<ButtonProps> = ({
     lg: 'py-4 px-8 text-lg',
   };
   
-  const glowEffect = <span className="absolute top-0 left-0 w-full h-full bg-white/20 blur-lg opacity-0 group-hover:opacity-50 group-hover:scale-150 transition-all duration-500"></span>;
-
-
   return (
     <button
       type={type}
@@ -41,7 +38,6 @@ const Button: React.FC<ButtonProps> = ({
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
     >
       <span className="relative z-10">{children}</span>
-      {variant !== 'outline' && variant !== 'outline-white' && glowEffect}
     </button>
   );
 };

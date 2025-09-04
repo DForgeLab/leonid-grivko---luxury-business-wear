@@ -24,9 +24,9 @@ const Guarantees: React.FC<GuaranteesProps> = ({ onCTAClick }) => {
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
           {guarantees.map((guarantee, index) => (
-            <div key={index} className="border border-primary/10 p-10 sm:p-12 rounded-lg text-center bg-background shadow-xl stagger-child">
-              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Гарантия {index + 1}</h3>
-              <p className="text-2xl sm:text-3xl font-semibold mb-2 font-serif">{guarantee.title}</p>
+            <div key={index} className="border border-primary/10 p-10 sm:p-12 rounded-lg text-center bg-backgroundLight shadow-lg stagger-child">
+              <h3 className="text-2xl sm:text-3xl font-bold text-accent mb-2 font-serif tracking-wider">0{index + 1}</h3>
+              <p className="text-2xl sm:text-3xl font-semibold mb-2 font-serif text-primary">{guarantee.title}</p>
               <p className="text-textSecondary text-lg">{guarantee.description}</p>
             </div>
           ))}

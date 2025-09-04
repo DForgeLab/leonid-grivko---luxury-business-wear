@@ -13,24 +13,13 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen,
       <button
         onClick={onClick}
         className="w-full flex justify-between items-center text-left py-5 px-2 rounded-md hover:bg-primary/5 transition-colors duration-200"
+        aria-expanded={isOpen}
       >
         <h3 className="text-xl sm:text-2xl font-semibold font-sans text-text">{question}</h3>
-        <span className="flex-shrink-0 ml-4">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            width="24" 
-            height="24" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            className={`transform transition-transform duration-300 text-primary ${isOpen ? 'rotate-180' : 'rotate-0'}`}
-          >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </span>
+        <div className="flex-shrink-0 ml-4 w-6 h-6 relative">
+           <span className={`absolute h-0.5 w-4 bg-primary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}></span>
+           <span className={`absolute h-0.5 w-4 bg-primary top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 rotate-90`}></span>
+        </div>
       </button>
       <div
         className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}

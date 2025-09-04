@@ -24,12 +24,15 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onCTAClick }) => {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16">
           {products.map((product, index) => (
-            <div key={index} className="group overflow-hidden rounded-lg shadow-lg stagger-child">
+            <div key={index} className="group overflow-hidden rounded-lg shadow-lg stagger-child relative">
               <img 
                 src={product.src} 
                 alt={product.alt} 
-                className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" 
+                className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105" 
               />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                  <p className="text-white text-lg font-semibold text-center">Изысканный образ {index+1}</p>
+              </div>
             </div>
           ))}
         </div>
