@@ -25,14 +25,14 @@ const Testimonials: React.FC<TestimonialsProps> = ({ onCTAClick }) => {
   ];
 
   return (
-    <section className="py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
+    <section className="py-20 sm:py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-24 stagger-child">
+        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-16 sm:mb-24 stagger-child">
           Как LEONID GRIVKO изменил карьеру наших клиенток
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto mb-20">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-surface p-10 sm:p-12 rounded-2xl flex flex-col stagger-child">
+            <div key={index} className="bg-surface p-8 sm:p-10 rounded-2xl flex flex-col stagger-child">
               <div className="relative z-10 flex flex-col h-full">
                   <p className="text-xl sm:text-2xl font-semibold text-textOnLight mb-6 font-serif leading-snug">"{testimonial.benefit}"</p>
                   <p className="text-textSecondaryOnLight italic text-base sm:text-lg mb-8 flex-grow">— {testimonial.review}</p>

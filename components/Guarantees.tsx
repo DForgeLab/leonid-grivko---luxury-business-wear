@@ -14,17 +14,17 @@ const Guarantees: React.FC<GuaranteesProps> = ({ onCTAClick }) => {
   ];
 
   return (
-    <section className="py-24 md:py-40 bg-background text-textOnDark fade-in-section">
+    <section className="py-20 sm:py-24 md:py-40 bg-background text-textOnDark fade-in-section">
       <div className="container mx-auto px-4 sm:px-6 text-center">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 stagger-child">
           3 гарантии, которые делают покупку безрисковой
         </h2>
-        <p className="max-w-3xl mx-auto text-base sm:text-lg text-textSecondaryOnDark mb-20 stagger-child">
+        <p className="max-w-3xl mx-auto text-base sm:text-lg text-textSecondaryOnDark mb-16 sm:mb-20 stagger-child">
           Мы настолько уверены в качестве, что даем гарантии, которых нет у конкурентов
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-16 sm:mb-20">
           {guarantees.map((guarantee, index) => (
-            <div key={index} className="border border-white/10 bg-black/20 p-10 sm:p-12 rounded-2xl text-center stagger-child">
+            <div key={index} className="border border-white/10 bg-black/20 p-8 sm:p-10 rounded-2xl text-center stagger-child">
               <h3 className="text-4xl font-bold text-primary mb-4 font-serif tracking-wider">0{index + 1}</h3>
               <p className="text-xl sm:text-2xl font-semibold mb-3 font-serif text-textOnDark">{guarantee.title}</p>
               <p className="text-textSecondaryOnDark text-base">{guarantee.description}</p>

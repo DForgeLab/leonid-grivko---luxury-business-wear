@@ -15,7 +15,7 @@ const FinalCTA: React.FC<FinalCTAProps> = ({ onCTAClick }) => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-background text-textOnDark fade-in-section">
+    <section className="py-20 sm:py-24 md:py-32 bg-background text-textOnDark fade-in-section">
       <div className="container mx-auto px-4 sm:px-6 text-center">
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 stagger-child">
           Ваша карьера заслуживает идеального гардероба
@@ -26,7 +26,7 @@ const FinalCTA: React.FC<FinalCTAProps> = ({ onCTAClick }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl mx-auto text-left mb-16">
           {bullets.map((text, index) => (
             <div key={index} className="flex items-start stagger-child">
-              <CheckIcon className="w-7 h-7 text-primary mr-5 mt-1 flex-shrink-0" />
+              <CheckIcon className="w-7 h-7 text-primary mr-4 sm:mr-5 mt-1 flex-shrink-0" />
               <p className="text-base sm:text-lg">{text}</p>
             </div>
           ))}

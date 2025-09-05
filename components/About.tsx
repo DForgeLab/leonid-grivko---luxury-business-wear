@@ -15,12 +15,12 @@ const About: React.FC<AboutProps> = ({ onCTAClick }) => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-background fade-in-section">
+    <section className="py-20 sm:py-24 md:py-32 bg-background fade-in-section">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
           
           {/* Left Content Card */}
-          <div className="lg:w-1/2 w-full bg-backgroundLight text-textOnLight p-8 md:p-12 rounded-2xl flex flex-col justify-center stagger-child">
+          <div className="lg:w-1/2 w-full bg-backgroundLight text-textOnLight p-8 sm:p-12 rounded-2xl flex flex-col justify-center stagger-child">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight stagger-child font-serif">
               LEONID GRIVKO: где рождается русский luxury
             </h2>
@@ -30,7 +30,7 @@ const About: React.FC<AboutProps> = ({ onCTAClick }) => {
             <div className="space-y-5 mb-10">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start stagger-child">
-                  <CheckIcon className="w-7 h-7 text-primary mr-5 mt-1 flex-shrink-0" />
+                  <CheckIcon className="w-7 h-7 text-primary mr-4 sm:mr-5 mt-1 flex-shrink-0" />
                   <p className="text-base sm:text-lg text-textSecondaryOnLight">{feature}</p>
                 </div>
               ))}

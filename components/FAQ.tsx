@@ -32,9 +32,9 @@ const FAQ: React.FC = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
+        <section className="py-20 sm:py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
             <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-                <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-20 stagger-child">
+                <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-16 sm:mb-20 stagger-child">
                     Ответы на главные вопросы
                 </h2>
                 <div className="space-y-4">

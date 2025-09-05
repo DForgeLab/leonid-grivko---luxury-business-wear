@@ -7,7 +7,7 @@ type QuizCTAProps = {
 
 const QuizCTA: React.FC<QuizCTAProps> = ({ onCTAClick }) => {
   return (
-    <section className="py-24 md:py-32 text-center bg-background text-textOnDark fade-in-section">
+    <section className="py-20 sm:py-24 md:py-32 text-center bg-background text-textOnDark fade-in-section">
       <div className="container mx-auto px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 stagger-child">
           Ответьте на 4 вопроса и получите подборку на год

@@ -7,7 +7,7 @@ type StylistOfferProps = {
 
 const StylistOffer: React.FC<StylistOfferProps> = ({ onCTAClick }) => {
     return (
-        <section className="py-24 md:py-32 bg-backgroundLight text-textOnLight fade-in-section">
+        <section className="py-20 sm:py-24 md:py-32 bg-backgroundLight text-textOnLight fade-in-section">
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
                     <div className="lg:w-1/2">

@@ -2,11 +2,11 @@ import React from 'react';
 
 const ProblemStat: React.FC = () => {
   return (
-    <section className="py-24 md:py-40 bg-background text-textOnDark fade-in-section">
+    <section className="py-20 sm:py-28 md:py-40 bg-background text-textOnDark fade-in-section">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="relative flex flex-col lg:flex-row items-center gap-12 lg:gap-0">
           <div className="lg:w-1/2 relative z-10 lg:pr-12">
-            <div className="bg-backgroundLight text-textOnLight p-8 md:p-12 rounded-2xl">
+            <div className="bg-backgroundLight text-textOnLight p-6 sm:p-8 md:p-12 rounded-2xl">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight stagger-child">
                 8 из 10 женщин теряют доверие клиентов из-за неправильной одежды
               </h2>

@@ -14,31 +14,27 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ onCTAClick }) => {
   ];
 
   return (
-    <section className="py-24 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
-      <div className="container mx-auto px-4 sm:px-6 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 stagger-child">
-          CLASSIC COLLECTION
+    <section className="py-20 sm:py-28 md:py-40 bg-backgroundLight text-textOnLight fade-in-section">
+      <div className="container mx-auto px-4 sm:px-6">
+        <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-6 stagger-child">
+          Это лишь 1% нашего ассортимента
         </h2>
-        <p className="max-w-3xl mx-auto text-base sm:text-lg text-textSecondaryOnLight mb-20 stagger-child">
-          Базовые костюмы для ежедневного использования. Надевайте их с уверенностью — они сядут по фигуре идеально.
+        <p className="text-center max-w-2xl mx-auto text-base sm:text-lg text-textSecondaryOnLight mb-16 sm:mb-20 stagger-child">
+          После прохождения теста вы получите персональную подборку из 6 образов, созданных специально для вас.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16 sm:mb-20">
           {products.map((product, index) => (
-            <div key={index} className="group text-left stagger-child">
-              <div className="overflow-hidden rounded-2xl mb-5">
-                <img 
-                  src={product.src} 
-                  alt={product.alt} 
-                  className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105" 
-                />
+            <div key={index} className="text-center stagger-child group">
+              <div className="bg-surface rounded-2xl overflow-hidden mb-6 aspect-[3/4] transition-transform duration-500 group-hover:scale-105">
+                <img src={product.src} alt={product.alt} className="w-full h-full object-cover" />
               </div>
-              <h3 className="font-sans text-lg font-medium text-textOnLight">{product.name}</h3>
-              <p className="font-sans text-base text-textSecondaryOnLight">{product.price}</p>
+              <h3 className="text-lg font-semibold text-textOnLight font-sans">{product.name}</h3>
+              <p className="text-primary font-bold text-lg">{product.price}</p>
             </div>
           ))}
         </div>
-        <div className="stagger-child">
-            <Button size="lg" onClick={onCTAClick}>Посмотреть всю коллекцию</Button>
+        <div className="text-center stagger-child">
+          <Button size="lg" onClick={onCTAClick}>Получить полный каталог</Button>
         </div>
       </div>
     </section>
