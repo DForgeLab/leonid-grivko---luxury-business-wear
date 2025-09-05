@@ -14,6 +14,7 @@ const UrgentOffer: React.FC<UrgentOfferProps> = ({ onCTAClick }) => {
     "Гарантия лучшей цены в luxury-сегменте",
     "Подарок: руководство 'Как выглядеть дорого'"
   ];
+  
 
   return (
     <section className="py-20 sm:py-24 md:py-32 bg-background text-textOnDark fade-in-section">
