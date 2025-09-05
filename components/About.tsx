@@ -43,7 +43,7 @@ const About: React.FC<AboutProps> = ({ onCTAClick }) => {
           {/* Right Image */}
           <div className="lg:w-1/2 w-full stagger-child">
             <img 
-              src="https://static.tildacdn.com/tild3833-3663-4466-b330-336533383766/92.png"
+              src="https://static.tildacdn.com/tild3634-6536-4139-b761-353763343066/8_2.png"
               alt="Женщина в элегантном деловом платье от Leonid Grivko"
               className="rounded-2xl w-full h-full object-cover min-h-[400px] lg:min-h-0"
             />
